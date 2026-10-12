@@ -16,7 +16,7 @@
 | GND | GND，必须共地 |
 | VCC | 3.3 V，确认屏幕模块支持该电压 |
 | SCL | PB8，I2C1_SCL |
-| SDA | PB7，I2C1_SDA |
+| SDA | PB9，I2C1_SDA |
 
 I2C 为 100 kHz。当前 GPIO 配置没有启用内部上拉，SDA/SCL 需要外部上拉；
 若模块板已有上拉无需重复添加，并确保上拉电压为 3.3 V。
