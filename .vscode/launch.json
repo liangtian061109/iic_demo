@@ -1,7 +1,9 @@
 {
-    // 由 dap.ps1 自动生成 —— 按 F5 即可编译并进入调试
+    // DAP-Link / ST-Link 调试配置 —— 按 F5 可编译并进入调试
     "version": "0.2.0",
     "configurations": [
+        
+        
         {
             "name": "DAPLink 调试 (OpenOCD)",
             "type": "cortex-debug",
@@ -23,18 +25,24 @@
             }
         },
         {
-            "name": "DAPLink 附加 (attach)",
+            "name": "ST-Link 调试 (OpenOCD)",
             "type": "cortex-debug",
-            "request": "attach",
+            "request": "launch",
             "cwd": "${workspaceFolder}",
             "executable": "${workspaceFolder}/build/Debug/iic_demo.elf",
             "servertype": "openocd",
             "configFiles": [
-                "${workspaceFolder}/openocd_dap.cfg"
+                "${workspaceFolder}/openocd_stlink.cfg"
             ],
             "gdbPath": "C:/Users/30710/AppData/Local/stm32cube/bundles/gnu-gdb-for-stm32/14.3.1+st.2/bin/arm-none-eabi-gdb.exe",
             "svdFile": "D:/stm32halproject/tools/svd/STM32F407.svd",
-            "showDevDebugOutput": "none"
+            "runToEntryPoint": "main",
+            "preLaunchTask": "build",
+            "showDevDebugOutput": "none",
+            "liveWatch": {
+                "enabled": true,
+                "samplesPerSecond": 4
+            }
         }
     ]
 }

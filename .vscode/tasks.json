@@ -30,6 +30,27 @@
             "command": "powershell",
             "args": [ "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "D:/stm32halproject/tools/dap.ps1", "erase" ],
             "problemMatcher": []
+        },
+        {
+            "label": "stlink: 编译并烧录",
+            "type": "shell",
+            "command": "powershell",
+            "args": [ "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "D:/stm32halproject/tools/stlink.ps1", "flash", "-Configuration", "Debug" ],
+            "problemMatcher": []
+        },
+        {
+            "label": "stlink: 纯烧录",
+            "type": "shell",
+            "command": "powershell",
+            "args": [ "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "D:/stm32halproject/tools/stlink.ps1", "flash", "-NoBuild", "-Configuration", "Debug" ],
+            "problemMatcher": []
+        },
+        {
+            "label": "stlink: 全片擦除",
+            "type": "shell",
+            "command": "powershell",
+            "args": [ "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "D:/stm32halproject/tools/stlink.ps1", "erase", "-Configuration", "Debug" ],
+            "problemMatcher": []
         }
     ]
 }

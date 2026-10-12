@@ -85,3 +85,12 @@ OLED 只有一个 APP，不需要经过消息中心。消息中心用于 `robot_
 `gimbal` 等平行 APP 之间交换命令和反馈，最小固定池示例见
 `Modules/MessageCenter/` 和 `Examples/message_center_demo.c`；它未加入本例程构建。
 
+## ST-Link 烧录
+
+工程已在 VS Code 任务中加入 ST-Link 入口。打开命令面板运行 `Tasks: Run Task`，选择以下任一任务：
+
+- `stlink: 编译并烧录`：使用 Debug 配置编译后，通过 ST-Link/SWD 烧录；
+- `stlink: 纯烧录`：直接烧录已有的 Debug ELF；
+- `stlink: 全片擦除`：擦除目标芯片整片 Flash。
+
+这些任务调用 `D:/stm32halproject/tools/stlink.ps1`，需要先安装并配置 OpenOCD 及 ST-Link 驱动。脚本会自动生成独立的 `openocd_stlink.cfg`，不会修改 DAP-Link 的配置。
